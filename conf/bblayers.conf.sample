@@ -1,0 +1,20 @@
+LCONF_VERSION = "7"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+  ##OEROOT##/../poky/meta \
+  ##OEROOT##/../poky/meta-yocto \
+  ##OEROOT##/../openembedded-core/meta \
+  ##OEROOT##/../meta-openembedded/meta-oe \
+  ##OEROOT##/../meta-openembedded/meta-multimedia \
+  ##OEROOT##/../meta-openembedded/meta-networking \
+  ##OEROOT##/../meta-openembedded/meta-python \
+  ##OEROOT##/../meta-openembedded/meta-initramfs \
+  ##OEROOT##/../meta-raspberrypi \
+  ##OEROOT##/../meta-nodejs \
+  ##OEROOT##/../meta-nodejs-contrib \
+  ##OEROOT##/../meta-qt5 \
+  ##OEROOT##/../meta-guh \
+  "

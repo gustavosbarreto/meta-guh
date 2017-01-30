@@ -1,0 +1,8 @@
+#!/bin/sh
+
+BITBAKEDIR=$PWD/sources/bitbake
+OEROOT=$PWD/sources/openembedded-core
+
+export TEMPLATECONF=$PWD/sources/meta-guh/conf
+
+. $OEROOT/oe-init-build-env

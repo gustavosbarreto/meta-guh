@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch="." name="origin"/>
+  <remote fetch="git://git.openembedded.org" name="oe"/>
+  <remote fetch="git://git.yoctoproject.org" name="yocto"/>
+  <remote fetch="git://code.qt.io" name="qt"/>
+  <remote fetch="https://github.com/" name="github"/>
+
+  <default revision="refs/heads/master" remote="origin" sync-j="4"/>
+
+  <project name="bitbake" path="sources/bitbake" remote="oe" revision="1.30"/>
+  <project name="openembedded-core" path="sources/openembedded-core" remote="oe" revision="krogoth"/>
+  <project name="meta-openembedded" path="sources/meta-openembedded" remote="oe" revision="247b1267bbe95719cd4877d2d3cfbaf2a2f4865a"/>
+  <project name="poky" path="sources/poky" remote="yocto" revision="krogoth"/>
+  <project name="meta-raspberrypi" path="sources/meta-raspberrypi" remote="yocto" revision="2745399f75d7564fcc586d0365ff73be47849d0e"/>
+  <project name="yocto/meta-qt5" path="sources/meta-qt5" remote="qt" revision="10360a69af21297133132cba3adafe7644ef5295"/>
+  <project name="imyller/meta-nodejs" path="sources/meta-nodejs" remote="github" revision="3c2d7b61ba45436c6c62d60555cd91370a7ad1a2"/>
+  <project name="imyller/meta-nodejs-contrib" path="sources/meta-nodejs-contrib" remote="github" revision="b93141866cfd97b1d7cfa882772c2d0241014a3e"/>
+  <project name="meta-guh" path="sources/meta-guh" remote="origin">
+    <copyfile src="setup-environment" dest="setup-environment"/>
+    <copyfile src="scripts/build.sh" dest="scripts/build.sh"/>
+  </project>
+</manifest>

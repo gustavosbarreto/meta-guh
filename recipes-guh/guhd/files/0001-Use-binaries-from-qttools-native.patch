@@ -1,0 +1,28 @@
+From 1e782b964baecde4afdc0f5331cdd7a53e07d199 Mon Sep 17 00:00:00 2001
+From: "Luis Gustavo S. Barreto" <gustavosbarreto@gmail.com>
+Date: Fri, 27 Jan 2017 13:35:58 -0200
+Subject: [PATCH] Use binaries from qttools-native to update and generate
+ translation files
+
+---
+ server/server.pro | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/server/server.pro b/server/server.pro
+index eae1ef1..57245f1 100644
+--- a/server/server.pro
++++ b/server/server.pro
+@@ -20,8 +20,8 @@ TRANSLATIONS *= $$top_srcdir/translations/guhd-en_US.ts \
+ lrelease.input = TRANSLATIONS
+ lrelease.CONFIG += no_link
+ lrelease.output = $$top_srcdir/${QMAKE_FILE_BASE}.qm
+-lrelease.commands = $$[QT_INSTALL_BINS]/lupdate -recursive -no-obsolete $$_FILE_; \
+-                    $$[QT_INSTALL_BINS]/lrelease ${QMAKE_FILE_IN} -qm ${QMAKE_FILE_PATH}/${QMAKE_FILE_BASE}.qm; \
++lrelease.commands = $$[QT_HOST_BINS/get]/lupdate -recursive -no-obsolete $$_FILE_; \
++                    $$[QT_HOST_BINS/get]/lrelease ${QMAKE_FILE_IN} -qm ${QMAKE_FILE_PATH}/${QMAKE_FILE_BASE}.qm; \
+                     rsync -a $$top_srcdir/translations/*.qm $$top_builddir/translations/;
+ 
+ QMAKE_EXTRA_COMPILERS += lrelease
+-- 
+2.10.2
+

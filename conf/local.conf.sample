@@ -1,0 +1,3 @@
+MACHINE ??= "raspberrypi3"
+DISTRO ?= "guh"
+SDKMACHINE = "x86_64"
