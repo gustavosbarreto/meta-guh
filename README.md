@@ -12,5 +12,6 @@ $ mkdir guh-build
 $ cd guh-build
 $ repo init -u https://github.com/gustavosbarreto/meta-guh.git
 $ repo sync
+$ . setup-environment build
 $ bitbake guh-image
 ```
